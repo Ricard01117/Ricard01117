@@ -1,0 +1,341 @@
+<svg
+  width="1200"
+  height="430"
+  viewBox="0 0 1200 430"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs>
+    <!-- Fondo -->
+    <linearGradient id="background" x1="0" y1="0" x2="1200" y2="430">
+      <stop stop-color="#02070D"/>
+      <stop offset="0.5" stop-color="#04111D"/>
+      <stop offset="1" stop-color="#020812"/>
+    </linearGradient>
+
+    <!-- Brillo fuerte -->
+    <filter id="cyanGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Brillo pequeño -->
+    <filter id="smallGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Cuadrícula -->
+    <pattern id="grid" width="38" height="38" patternUnits="userSpaceOnUse">
+      <path
+        d="M 38 0 L 0 0 0 38"
+        fill="none"
+        stroke="#0C3750"
+        stroke-width="0.7"
+        opacity="0.25"
+      />
+    </pattern>
+
+    <!-- Recorte para la futura foto -->
+    <clipPath id="profileClip">
+      <circle cx="235" cy="205" r="96"/>
+    </clipPath>
+  </defs>
+
+  <!-- Fondo principal -->
+  <rect
+    width="1200"
+    height="430"
+    rx="26"
+    fill="url(#background)"
+  />
+
+  <rect
+    width="1200"
+    height="430"
+    rx="26"
+    fill="url(#grid)"
+  />
+
+  <!-- Borde exterior -->
+  <rect
+    x="2"
+    y="2"
+    width="1196"
+    height="426"
+    rx="24"
+    stroke="#00D9FF"
+    stroke-opacity="0.65"
+    stroke-width="2"
+  />
+
+  <!-- Luces decorativas -->
+  <circle
+    cx="75"
+    cy="70"
+    r="3"
+    fill="#00F5FF"
+    filter="url(#smallGlow)"
+  />
+
+  <circle
+    cx="1080"
+    cy="75"
+    r="3"
+    fill="#008CFF"
+    filter="url(#smallGlow)"
+  />
+
+  <circle cx="1130" cy="160" r="2" fill="#00F5FF"/>
+  <circle cx="1020" cy="350" r="2" fill="#00F5FF"/>
+  <circle cx="530" cy="60" r="2" fill="#008CFF"/>
+
+  <!-- Círculo exterior de la foto -->
+  <circle
+    cx="235"
+    cy="205"
+    r="122"
+    fill="#03121D"
+    stroke="#00E5FF"
+    stroke-width="3"
+    filter="url(#cyanGlow)"
+  />
+
+  <!-- Fondo interior -->
+  <circle
+    cx="235"
+    cy="205"
+    r="101"
+    fill="#071824"
+    stroke="#54F5F5"
+    stroke-width="8"
+  />
+
+  <!-- Marcador temporal de foto -->
+  <circle
+    cx="235"
+    cy="205"
+    r="96"
+    fill="#071824"
+  />
+
+  <text
+    x="235"
+    y="198"
+    text-anchor="middle"
+    fill="#00E5FF"
+    font-family="Segoe UI, Arial, sans-serif"
+    font-size="22"
+    font-weight="700"
+  >
+    FOTO
+  </text>
+
+  <text
+    x="235"
+    y="226"
+    text-anchor="middle"
+    fill="#67A9C4"
+    font-family="Segoe UI, Arial, sans-serif"
+    font-size="14"
+  >
+    próximamente
+  </text>
+
+  <!-- Borde interior -->
+  <circle
+    cx="235"
+    cy="205"
+    r="96"
+    fill="none"
+    stroke="#B8FFFF"
+    stroke-width="3"
+  />
+
+  <!-- Órbitas -->
+  <ellipse
+    cx="235"
+    cy="205"
+    rx="170"
+    ry="62"
+    stroke="#00D9FF"
+    stroke-opacity="0.6"
+    stroke-width="1.5"
+    transform="rotate(-14 235 205)"
+  />
+
+  <ellipse
+    cx="235"
+    cy="205"
+    rx="160"
+    ry="55"
+    stroke="#0077FF"
+    stroke-opacity="0.35"
+    stroke-width="1"
+    transform="rotate(24 235 205)"
+  />
+
+  <!-- Título principal -->
+  <text
+    x="420"
+    y="105"
+    fill="#FFFFFF"
+    font-family="Segoe UI, Arial, sans-serif"
+    font-size="39"
+    font-weight="700"
+  >
+    Construyendo soluciones reales
+  </text>
+
+  <text
+    x="420"
+    y="153"
+    fill="#FFFFFF"
+    font-family="Segoe UI, Arial, sans-serif"
+    font-size="39"
+    font-weight="700"
+  >
+    con código que
+  </text>
+
+  <text
+    x="690"
+    y="153"
+    fill="#00F0E6"
+    font-family="Segoe UI, Arial, sans-serif"
+    font-size="39"
+    font-weight="700"
+    filter="url(#smallGlow)"
+  >
+    transforma.
+  </text>
+
+  <!-- Línea decorativa -->
+  <rect
+    x="420"
+    y="178"
+    width="72"
+    height="4"
+    rx="2"
+    fill="#00E5FF"
+    filter="url(#smallGlow)"
+  />
+
+  <!-- Fragmento de código -->
+  <text
+    x="420"
+    y="220"
+    fill="#67A9C4"
+    font-family="Consolas, monospace"
+    font-size="17"
+  >
+    const developer = {
+  </text>
+
+  <text
+    x="445"
+    y="250"
+    fill="#45E78D"
+    font-family="Consolas, monospace"
+    font-size="17"
+  >
+    focus:
+  </text>
+
+  <text
+    x="510"
+    y="250"
+    fill="#F6C453"
+    font-family="Consolas, monospace"
+    font-size="17"
+  >
+    ['React', 'JavaScript', 'Python', 'SQL', 'Laravel'],
+  </text>
+
+  <text
+    x="445"
+    y="280"
+    fill="#45E78D"
+    font-family="Consolas, monospace"
+    font-size="17"
+  >
+    goal:
+  </text>
+
+  <text
+    x="500"
+    y="280"
+    fill="#F6C453"
+    font-family="Consolas, monospace"
+    font-size="17"
+  >
+    'Resolver problemas y automatizar procesos.'
+  </text>
+
+  <text
+    x="420"
+    y="310"
+    fill="#67A9C4"
+    font-family="Consolas, monospace"
+    font-size="17"
+  >
+    };
+  </text>
+
+  <!-- Nombre -->
+  <text
+    x="235"
+    y="370"
+    text-anchor="middle"
+    fill="#FFFFFF"
+    font-family="Segoe UI, Arial, sans-serif"
+    font-size="36"
+    font-weight="700"
+    filter="url(#smallGlow)"
+  >
+    Ricardo Castro
+  </text>
+
+  <text
+    x="235"
+    y="405"
+    text-anchor="middle"
+    fill="#00E5FF"
+    font-family="Consolas, monospace"
+    font-size="20"
+    font-weight="600"
+  >
+    &lt;/&gt; Ricard01117
+  </text>
+
+  <!-- Icono de código -->
+  <text
+    x="1040"
+    y="245"
+    text-anchor="middle"
+    fill="#00DFFF"
+    font-family="Consolas, monospace"
+    font-size="92"
+    font-weight="700"
+    filter="url(#cyanGlow)"
+  >
+    &lt;/&gt;
+  </text>
+
+  <text
+    x="1040"
+    y="292"
+    text-anchor="middle"
+    fill="#5DA4C2"
+    font-family="Segoe UI, Arial, sans-serif"
+    font-size="17"
+  >
+    Desarrollo • Automatización
+  </text>
+</svg>
