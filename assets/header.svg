@@ -5,83 +5,132 @@
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
 >
+
   <defs>
-    <!-- Fondo -->
-    <linearGradient id="bgGradient" x1="0" y1="0" x2="1200" y2="430" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#03101C"/>
-      <stop offset="50%" stop-color="#041525"/>
-      <stop offset="100%" stop-color="#07111B"/>
+
+    <!-- =========================
+         FONDO
+    ========================== -->
+
+    <linearGradient
+      id="background"
+      x1="0"
+      y1="0"
+      x2="1200"
+      y2="430"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0" stop-color="#020912"/>
+      <stop offset="0.55" stop-color="#03121E"/>
+      <stop offset="1" stop-color="#020812"/>
     </linearGradient>
 
-    <!-- Cuadrícula -->
-    <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
+    <pattern
+      id="grid"
+      width="36"
+      height="36"
+      patternUnits="userSpaceOnUse"
+    >
       <path
-        d="M 34 0 L 0 0 0 34"
+        d="M 36 0 L 0 0 0 36"
         fill="none"
-        stroke="#0D3146"
-        stroke-width="0.8"
-        opacity="0.35"
+        stroke="#0B3850"
+        stroke-width="0.7"
+        opacity="0.22"
       />
     </pattern>
 
-    <!-- Brillos -->
-    <filter id="cyanGlow" x="-100%" y="-100%" width="300%" height="300%">
-      <feGaussianBlur stdDeviation="6" result="blur"/>
+    <!-- =========================
+         BRILLOS
+    ========================== -->
+
+    <filter
+      id="cyanGlow"
+      x="-100%"
+      y="-100%"
+      width="300%"
+      height="300%"
+    >
+      <feGaussianBlur
+        stdDeviation="5"
+        result="blur"
+      />
+
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
 
-    <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
+    <filter
+      id="smallGlow"
+      x="-100%"
+      y="-100%"
+      width="300%"
+      height="300%"
+    >
+      <feGaussianBlur
+        stdDeviation="2.3"
+        result="blur"
+      />
+
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
 
-    <filter id="textGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
 
-  <!-- Fondo general -->
-  <rect width="1200" height="430" rx="24" fill="url(#bgGradient)"/>
-  <rect width="1200" height="430" rx="24" fill="url(#grid)"/>
+  <!-- =====================================================
+       FONDO GENERAL
+  ====================================================== -->
+
   <rect
-    x="1.5"
-    y="1.5"
-    width="1197"
-    height="427"
-    rx="22.5"
-    stroke="#09D7FF"
-    stroke-opacity="0.45"
-    stroke-width="1.5"
+    width="1200"
+    height="430"
+    rx="24"
+    fill="url(#background)"
   />
 
-  <!-- Cabecera terminal -->
+  <rect
+    width="1200"
+    height="430"
+    rx="24"
+    fill="url(#grid)"
+  />
+
+  <rect
+    x="2"
+    y="2"
+    width="1196"
+    height="426"
+    rx="22"
+    stroke="#00DFFF"
+    stroke-width="1.5"
+    stroke-opacity="0.42"
+  />
+
+  <!-- =====================================================
+       CABECERA TERMINAL
+  ====================================================== -->
+
   <text
-    x="38"
-    y="38"
+    x="40"
+    y="39"
     fill="#00E5FF"
-    font-family="Consolas, 'Courier New', monospace"
+    font-family="Consolas, monospace"
     font-size="17"
     font-weight="700"
-    filter="url(#softGlow)"
   >
     &gt;_
   </text>
 
   <text
-    x="84"
-    y="38"
+    x="82"
+    y="39"
     fill="#00E5FF"
-    font-family="Consolas, 'Courier New', monospace"
+    font-family="Consolas, monospace"
     font-size="17"
     font-weight="700"
   >
@@ -90,209 +139,626 @@
 
   <text
     x="205"
-    y="38"
-    fill="#A8C4D6"
-    font-family="Consolas, 'Courier New', monospace"
-    font-size="17"
+    y="39"
+    fill="#6E91A8"
+    font-family="Consolas, monospace"
+    font-size="16"
   >
-    // README.md
+    //
   </text>
 
-  <line x1="36" y1="55" x2="680" y2="55" stroke="#1ECFFF" stroke-opacity="0.28"/>
+  <text
+    x="235"
+    y="39"
+    fill="#E6F3FA"
+    font-family="Consolas, monospace"
+    font-size="16"
+  >
+    README.md
+  </text>
 
-  <!-- Nombre -->
+  <line
+    x1="40"
+    y1="56"
+    x2="675"
+    y2="56"
+    stroke="#00DFFF"
+    stroke-opacity="0.22"
+  />
+
+  <!-- =====================================================
+       NOMBRE
+  ====================================================== -->
+
+  <!--
+    textLength fuerza el ancho del nombre.
+    Así el cursor no depende de cómo Chrome
+    renderice Segoe UI.
+  -->
+
   <text
     x="42"
     y="118"
     fill="#FFFFFF"
     font-family="Segoe UI, Arial, sans-serif"
-    font-size="78"
+    font-size="66"
     font-weight="800"
-    filter="url(#textGlow)"
+    textLength="410"
+    lengthAdjust="spacingAndGlyphs"
+    filter="url(#smallGlow)"
   >
     Ricardo Castro
   </text>
 
-  <!-- Cursor al final del nombre -->
-  <rect
-    x="560"
-    y="70"
-    width="6"
-    height="58"
-    rx="3"
-    fill="#00E5FF"
-    filter="url(#softGlow)"
-  />
+  <!-- =====================================================
+       CURSOR
+  ====================================================== -->
 
-  <!-- Frase principal en 2 renglones -->
+  <!--
+    Nombre:
+    x inicial = 42
+    ancho forzado = 410
+    final = 452
+
+    Cursor = 462
+  -->
+
+  <rect
+    x="462"
+    y="68"
+    width="5"
+    height="59"
+    rx="2"
+    fill="#00E5FF"
+    filter="url(#smallGlow)"
+  >
+    <animate
+      attributeName="opacity"
+      values="1;1;0;0;1"
+      dur="1.2s"
+      repeatCount="indefinite"
+    />
+  </rect>
+
+  <!-- =====================================================
+       FRASE - RENGLÓN 1
+  ====================================================== -->
+
   <text
     x="42"
-    y="165"
+    y="164"
     fill="#FFFFFF"
     font-family="Segoe UI, Arial, sans-serif"
-    font-size="29"
+    font-size="24"
     font-weight="600"
   >
     Construyendo soluciones reales
   </text>
 
+  <!-- =====================================================
+       FRASE - RENGLÓN 2
+  ====================================================== -->
+
   <text
     x="42"
-    y="200"
-    fill="#FFFFFF"
+    y="197"
     font-family="Segoe UI, Arial, sans-serif"
-    font-size="29"
+    font-size="24"
     font-weight="600"
   >
-    con código que
+
+    <tspan fill="#FFFFFF">
+      con código que
+    </tspan>
+
+    <tspan
+      fill="#00F0E6"
+      font-weight="700"
+      filter="url(#smallGlow)"
+    >
+      transforma.
+    </tspan>
+
   </text>
 
-  <text
-    x="322"
-    y="200"
-    fill="#00F0E6"
-    font-family="Segoe UI, Arial, sans-serif"
-    font-size="29"
-    font-weight="700"
-    filter="url(#softGlow)"
-  >
-    transforma.
-  </text>
+  <!-- =====================================================
+       SUBTÍTULO
+  ====================================================== -->
 
-  <line x1="42" y1="214" x2="640" y2="214" stroke="#11D8FF" stroke-opacity="0.28"/>
-
-  <!-- Subtítulo -->
   <text
     x="42"
-    y="242"
+    y="232"
     fill="#00E5FF"
-    font-family="Consolas, 'Courier New', monospace"
-    font-size="21"
+    font-family="Consolas, monospace"
+    font-size="18"
     font-weight="700"
   >
     &lt;/&gt;
   </text>
 
   <text
-    x="85"
-    y="242"
-    fill="#A9D8F0"
-    font-family="Consolas, 'Courier New', monospace"
-    font-size="20"
+    x="88"
+    y="232"
+    fill="#91C9E4"
+    font-family="Consolas, monospace"
+    font-size="17"
   >
     Desarrollador Frontend &amp; Full Stack
   </text>
 
-  <!-- Caja de código -->
+  <!-- =====================================================
+       TERMINAL
+  ====================================================== -->
+
   <rect
-    x="40"
-    y="260"
-    width="630"
+    x="42"
+    y="250"
+    width="635"
     height="108"
-    rx="14"
-    fill="#07131E"
-    fill-opacity="0.85"
-    stroke="#11D8FF"
-    stroke-opacity="0.45"
-    stroke-width="1.3"
+    rx="12"
+    fill="#020B13"
+    fill-opacity="0.92"
+    stroke="#145978"
+    stroke-width="1.2"
   />
 
-  <!-- Números -->
-  <text x="60" y="294" fill="#4B78B6" font-family="Consolas, monospace" font-size="18">1</text>
-  <text x="60" y="320" fill="#4B78B6" font-family="Consolas, monospace" font-size="18">2</text>
-  <text x="60" y="346" fill="#4B78B6" font-family="Consolas, monospace" font-size="18">3</text>
-  <text x="60" y="372" fill="#4B78B6" font-family="Consolas, monospace" font-size="18">4</text>
+  <!-- Línea 1 -->
 
-  <!-- Código -->
-  <text x="92" y="294" fill="#00F0E6" font-family="Consolas, monospace" font-size="18" font-weight="700">const</text>
-  <text x="145" y="294" fill="#FFFFFF" font-family="Consolas, monospace" font-size="18">developer = {</text>
-
-  <text x="92" y="320" fill="#C95DFF" font-family="Consolas, monospace" font-size="18" font-weight="700">focus:</text>
-  <text x="168" y="320" fill="#E8F3FF" font-family="Consolas, monospace" font-size="18">['React', 'JavaScript', 'Python', 'SQL', 'Laravel'],</text>
-
-  <text x="92" y="346" fill="#C95DFF" font-family="Consolas, monospace" font-size="18" font-weight="700">goal:</text>
-  <text x="156" y="346" fill="#4BF28C" font-family="Consolas, monospace" font-size="18">'Resolver problemas, crear valor y automatizar procesos.'</text>
-
-  <text x="92" y="372" fill="#E8F3FF" font-family="Consolas, monospace" font-size="18">};</text>
-
-  <!-- Chips tecnologías -->
-  <g>
-    <rect x="40" y="385" width="108" height="34" rx="10" fill="#07131E" stroke="#00DFFF" stroke-width="1.3"/>
-    <text x="94" y="407" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">React</text>
-  </g>
-
-  <g>
-    <rect x="160" y="385" width="146" height="34" rx="10" fill="#07131E" stroke="#E6C229" stroke-width="1.3"/>
-    <text x="233" y="407" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">JavaScript</text>
-  </g>
-
-  <g>
-    <rect x="318" y="385" width="110" height="34" rx="10" fill="#07131E" stroke="#4AA3FF" stroke-width="1.3"/>
-    <text x="373" y="407" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">Python</text>
-  </g>
-
-  <g>
-    <rect x="440" y="385" width="94" height="34" rx="10" fill="#07131E" stroke="#00DFFF" stroke-width="1.3"/>
-    <text x="487" y="407" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">SQL</text>
-  </g>
-
-  <g>
-    <rect x="546" y="385" width="118" height="34" rx="10" fill="#07131E" stroke="#FF4D4D" stroke-width="1.3"/>
-    <text x="605" y="407" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">Laravel</text>
-  </g>
-
-  <!-- Zona decorativa derecha -->
-  <g opacity="0.95">
-    <circle cx="950" cy="205" r="108" stroke="#0B6EA0" stroke-opacity="0.35" stroke-width="1.5"/>
-    <circle cx="950" cy="205" r="90" stroke="#11D8FF" stroke-opacity="0.25" stroke-width="1.2" stroke-dasharray="8 7"/>
-    <circle cx="950" cy="205" r="72" stroke="#11D8FF" stroke-opacity="0.12" stroke-width="1"/>
-
-    <line x1="760" y1="134" x2="850" y2="134" stroke="#11D8FF" stroke-opacity="0.5"/>
-    <line x1="760" y1="318" x2="842" y2="318" stroke="#11D8FF" stroke-opacity="0.5"/>
-    <line x1="1058" y1="128" x2="1162" y2="128" stroke="#11D8FF" stroke-opacity="0.5"/>
-    <line x1="1060" y1="338" x2="1165" y2="338" stroke="#11D8FF" stroke-opacity="0.5"/>
-
-    <circle cx="760" cy="134" r="3.2" fill="#3EE7FF" filter="url(#softGlow)"/>
-    <circle cx="758" cy="318" r="3.2" fill="#3EE7FF" filter="url(#softGlow)"/>
-    <circle cx="1168" cy="128" r="3.2" fill="#3EE7FF" filter="url(#softGlow)"/>
-    <circle cx="1172" cy="338" r="3.2" fill="#3EE7FF" filter="url(#softGlow)"/>
-
-    <text
-      x="950"
-      y="255"
-      text-anchor="middle"
-      fill="#3EE7FF"
-      font-family="Consolas, 'Courier New', monospace"
-      font-size="120"
-      font-weight="700"
-      filter="url(#cyanGlow)"
-    >
-      &lt;/&gt;
-    </text>
-  </g>
-
-  <!-- Texto inferior derecho -->
   <text
-    x="900"
-    y="392"
+    x="61"
+    y="280"
+    fill="#467392"
+    font-family="Consolas, monospace"
+    font-size="15"
+  >
+    1
+  </text>
+
+  <text
+    x="92"
+    y="280"
+    fill="#00E5FF"
+    font-family="Consolas, monospace"
+    font-size="15"
+    font-weight="700"
+  >
+    const
+  </text>
+
+  <text
+    x="143"
+    y="280"
+    fill="#FFFFFF"
+    font-family="Consolas, monospace"
+    font-size="15"
+  >
+    developer =
+  </text>
+
+  <text
+    x="244"
+    y="280"
+    fill="#FFD936"
+    font-family="Consolas, monospace"
+    font-size="15"
+  >
+    {
+  </text>
+
+  <!-- Línea 2 -->
+
+  <text
+    x="61"
+    y="304"
+    fill="#467392"
+    font-family="Consolas, monospace"
+    font-size="15"
+  >
+    2
+  </text>
+
+  <text
+    x="92"
+    y="304"
+    fill="#D35CFF"
+    font-family="Consolas, monospace"
+    font-size="15"
+    font-weight="700"
+  >
+    focus:
+  </text>
+
+  <text
+    x="151"
+    y="304"
+    fill="#42F0B6"
+    font-family="Consolas, monospace"
+    font-size="15"
+  >
+    ['React', 'JavaScript', 'Python', 'SQL', 'Laravel'],
+  </text>
+
+  <!-- Línea 3 -->
+
+  <text
+    x="61"
+    y="328"
+    fill="#467392"
+    font-family="Consolas, monospace"
+    font-size="15"
+  >
+    3
+  </text>
+
+  <text
+    x="92"
+    y="328"
+    fill="#D35CFF"
+    font-family="Consolas, monospace"
+    font-size="15"
+    font-weight="700"
+  >
+    goal:
+  </text>
+
+  <text
+    x="143"
+    y="328"
+    fill="#42F0B6"
+    font-family="Consolas, monospace"
+    font-size="15"
+  >
+    'Resolver problemas, crear valor y automatizar procesos.'
+  </text>
+
+  <!-- Línea 4 -->
+
+  <text
+    x="61"
+    y="350"
+    fill="#467392"
+    font-family="Consolas, monospace"
+    font-size="15"
+  >
+    4
+  </text>
+
+  <text
+    x="92"
+    y="350"
+    fill="#FFFFFF"
+    font-family="Consolas, monospace"
+    font-size="15"
+  >
+    };
+  </text>
+
+  <!-- =====================================================
+       TECNOLOGÍAS
+  ====================================================== -->
+
+  <!-- React -->
+
+  <rect
+    x="42"
+    y="375"
+    width="105"
+    height="36"
+    rx="10"
+    fill="#04101A"
+    stroke="#00E5FF"
+    stroke-width="1.2"
+  />
+
+  <text
+    x="94.5"
+    y="398"
+    text-anchor="middle"
+    fill="#00E5FF"
+    font-family="Segoe UI, Arial, sans-serif"
+    font-size="15"
+    font-weight="700"
+  >
+    React
+  </text>
+
+  <!-- JavaScript -->
+
+  <rect
+    x="158"
+    y="375"
+    width="138"
+    height="36"
+    rx="10"
+    fill="#04101A"
+    stroke="#E0C52E"
+    stroke-width="1.2"
+  />
+
+  <text
+    x="227"
+    y="398"
+    text-anchor="middle"
     fill="#FFFFFF"
     font-family="Segoe UI, Arial, sans-serif"
-    font-size="18"
+    font-size="15"
     font-weight="700"
+  >
+    JavaScript
+  </text>
+
+  <!-- Python -->
+
+  <rect
+    x="307"
+    y="375"
+    width="105"
+    height="36"
+    rx="10"
+    fill="#04101A"
+    stroke="#3995CF"
+    stroke-width="1.2"
+  />
+
+  <text
+    x="359.5"
+    y="398"
+    text-anchor="middle"
+    fill="#FFFFFF"
+    font-family="Segoe UI, Arial, sans-serif"
+    font-size="15"
+    font-weight="700"
+  >
+    Python
+  </text>
+
+  <!-- SQL -->
+
+  <rect
+    x="423"
+    y="375"
+    width="90"
+    height="36"
+    rx="10"
+    fill="#04101A"
+    stroke="#00DFFF"
+    stroke-width="1.2"
+  />
+
+  <text
+    x="468"
+    y="398"
+    text-anchor="middle"
+    fill="#FFFFFF"
+    font-family="Segoe UI, Arial, sans-serif"
+    font-size="15"
+    font-weight="700"
+  >
+    SQL
+  </text>
+
+  <!-- Laravel -->
+
+  <rect
+    x="524"
+    y="375"
+    width="110"
+    height="36"
+    rx="10"
+    fill="#04101A"
+    stroke="#FF493D"
+    stroke-width="1.2"
+  />
+
+  <text
+    x="579"
+    y="398"
+    text-anchor="middle"
+    fill="#FFFFFF"
+    font-family="Segoe UI, Arial, sans-serif"
+    font-size="15"
+    font-weight="700"
+  >
+    Laravel
+  </text>
+
+  <!-- =====================================================
+       PARTE DERECHA
+  ====================================================== -->
+
+  <!-- Líneas superiores -->
+
+  <path
+    d="M735 120 H825 L855 90 H955"
+    stroke="#087CA8"
+    stroke-width="1.2"
+    opacity="0.5"
+  />
+
+  <circle
+    cx="735"
+    cy="120"
+    r="3"
+    fill="#00E5FF"
+    filter="url(#smallGlow)"
+  />
+
+  <path
+    d="M1030 90 H1090 L1120 60 H1170"
+    stroke="#087CA8"
+    stroke-width="1.2"
+    opacity="0.45"
+  />
+
+  <circle
+    cx="1170"
+    cy="60"
+    r="3"
+    fill="#00E5FF"
+    filter="url(#smallGlow)"
+  />
+
+  <!-- Líneas inferiores -->
+
+  <path
+    d="M735 315 H825 L855 345 H955"
+    stroke="#087CA8"
+    stroke-width="1.2"
+    opacity="0.45"
+  />
+
+  <circle
+    cx="735"
+    cy="315"
+    r="3"
+    fill="#00E5FF"
+    filter="url(#smallGlow)"
+  />
+
+  <path
+    d="M1030 345 H1090 L1120 375 H1170"
+    stroke="#087CA8"
+    stroke-width="1.2"
+    opacity="0.45"
+  />
+
+  <circle
+    cx="1170"
+    cy="375"
+    r="3"
+    fill="#00E5FF"
+    filter="url(#smallGlow)"
+  />
+
+  <!-- =====================================================
+       HUD CENTRAL
+  ====================================================== -->
+
+  <circle
+    cx="950"
+    cy="205"
+    r="120"
+    stroke="#075C83"
+    stroke-width="1.3"
+    stroke-opacity="0.35"
+  />
+
+  <circle
+    cx="950"
+    cy="205"
+    r="100"
+    stroke="#00B8E8"
+    stroke-width="1.3"
+    stroke-dasharray="9 8"
+    stroke-opacity="0.5"
+  >
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      from="0 950 205"
+      to="360 950 205"
+      dur="28s"
+      repeatCount="indefinite"
+    />
+  </circle>
+
+  <circle
+    cx="950"
+    cy="205"
+    r="82"
+    stroke="#0875A5"
+    stroke-width="1"
+    stroke-dasharray="3 8"
+    stroke-opacity="0.35"
+  >
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      from="360 950 205"
+      to="0 950 205"
+      dur="20s"
+      repeatCount="indefinite"
+    />
+  </circle>
+
+  <!-- =====================================================
+       ICONO </> DERECHO
+  ====================================================== -->
+
+  <!-- < -->
+
+  <path
+    d="
+      M 910 160
+      L 858 205
+      L 910 250
+    "
+    stroke="#22E2FF"
+    stroke-width="11"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    filter="url(#cyanGlow)"
+  />
+
+  <!-- / -->
+
+  <path
+    d="
+      M 965 142
+      L 935 270
+    "
+    stroke="#22E2FF"
+    stroke-width="12"
+    stroke-linecap="round"
+    filter="url(#cyanGlow)"
+  />
+
+  <!-- > -->
+
+  <path
+    d="
+      M 993 160
+      L 1045 205
+      L 993 250
+    "
+    stroke="#22E2FF"
+    stroke-width="11"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    filter="url(#cyanGlow)"
+  />
+
+  <!-- =====================================================
+       TEXTO DERECHO
+  ====================================================== -->
+
+  <text
+    x="896"
+    y="373"
+    fill="#FFFFFF"
+    font-family="Consolas, monospace"
+    font-size="16"
+    font-weight="600"
   >
     Desarrollo
   </text>
 
-  <circle cx="985" cy="386" r="3.2" fill="#11D8FF"/>
+  <circle
+    cx="982"
+    cy="368"
+    r="3"
+    fill="#00E5FF"
+  />
 
   <text
-    x="998"
-    y="392"
+    x="996"
+    y="373"
     fill="#FFFFFF"
-    font-family="Segoe UI, Arial, sans-serif"
-    font-size="18"
-    font-weight="700"
+    font-family="Consolas, monospace"
+    font-size="16"
+    font-weight="600"
   >
     Automatización
   </text>
+
 </svg>
