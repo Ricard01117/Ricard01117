@@ -1,7 +1,7 @@
 <div align="center">
 
 <img
-  src="./assets/perfil-completo.png"
+  src="./assets/header.svg"
   width="100%"
   alt="Perfil profesional de Ricardo Castro"
 />
