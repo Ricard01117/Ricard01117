@@ -73,7 +73,9 @@
 
   </defs>
 
-  <!-- FONDO -->
+  <!-- =====================================================
+       FONDO
+  ====================================================== -->
 
   <rect
     width="1200"
@@ -89,6 +91,7 @@
     fill="url(#grid)"
   />
 
+  <!-- Borde con pulso -->
   <rect
     x="2"
     y="2"
@@ -98,9 +101,18 @@
     stroke="#00DFFF"
     stroke-width="1.5"
     stroke-opacity="0.42"
-  />
+  >
+    <animate
+      attributeName="stroke-opacity"
+      values="0.28;0.65;0.28"
+      dur="4s"
+      repeatCount="indefinite"
+    />
+  </rect>
 
-  <!-- CABECERA -->
+  <!-- =====================================================
+       CABECERA
+  ====================================================== -->
 
   <text
     x="40"
@@ -109,7 +121,15 @@
     font-family="Consolas, 'Courier New', monospace"
     font-size="17"
     font-weight="700"
-  >&gt;_</text>
+  >
+    &gt;_
+    <animate
+      attributeName="opacity"
+      values="0.65;1;0.65"
+      dur="2s"
+      repeatCount="indefinite"
+    />
+  </text>
 
   <text
     x="82"
@@ -118,7 +138,9 @@
     font-family="Consolas, 'Courier New', monospace"
     font-size="17"
     font-weight="700"
-  >Ricard01117</text>
+  >
+    Ricard01117
+  </text>
 
   <text
     x="205"
@@ -126,7 +148,9 @@
     fill="#6E91A8"
     font-family="Consolas, 'Courier New', monospace"
     font-size="16"
-  >//</text>
+  >
+    //
+  </text>
 
   <text
     x="235"
@@ -134,7 +158,9 @@
     fill="#E6F3FA"
     font-family="Consolas, 'Courier New', monospace"
     font-size="16"
-  >README.md</text>
+  >
+    README.md
+  </text>
 
   <line
     x1="40"
@@ -143,9 +169,18 @@
     y2="56"
     stroke="#00DFFF"
     stroke-opacity="0.22"
-  />
+  >
+    <animate
+      attributeName="stroke-opacity"
+      values="0.15;0.45;0.15"
+      dur="3.5s"
+      repeatCount="indefinite"
+    />
+  </line>
 
-  <!-- NOMBRE + CURSOR -->
+  <!-- =====================================================
+       NOMBRE + CURSOR PARPADEANTE
+  ====================================================== -->
 
   <text
     x="42"
@@ -154,13 +189,23 @@
     font-family="Arial, Helvetica, sans-serif"
     font-size="66"
     font-weight="700"
-  >Ricardo Castro<tspan
+  >
+    Ricardo Castro<tspan
       fill="#00E5FF"
       font-family="Consolas, 'Courier New', monospace"
       font-weight="400"
-    >|</tspan></text>
+    >|<animate
+        attributeName="opacity"
+        values="1;1;0;0;1"
+        keyTimes="0;0.35;0.5;0.85;1"
+        dur="1.15s"
+        repeatCount="indefinite"
+      /></tspan>
+  </text>
 
-  <!-- FRASE EN DOS RENGLONES -->
+  <!-- =====================================================
+       FRASE EN DOS RENGLONES
+  ====================================================== -->
 
   <text
     x="42"
@@ -169,7 +214,9 @@
     font-family="Arial, Helvetica, sans-serif"
     font-size="25"
     font-weight="600"
-  >Construyendo soluciones reales</text>
+  >
+    Construyendo soluciones reales
+  </text>
 
   <text
     x="42"
@@ -178,12 +225,22 @@
     font-family="Arial, Helvetica, sans-serif"
     font-size="25"
     font-weight="600"
-  >con código que <tspan
+  >
+    con código que <tspan
       fill="#00F0E6"
       font-weight="700"
-    >transforma.</tspan></text>
+      filter="url(#smallGlow)"
+    >transforma.<animate
+        attributeName="opacity"
+        values="0.78;1;0.78"
+        dur="2.2s"
+        repeatCount="indefinite"
+      /></tspan>
+  </text>
 
-  <!-- SUBTÍTULO -->
+  <!-- =====================================================
+       SUBTÍTULO
+  ====================================================== -->
 
   <text
     x="42"
@@ -192,7 +249,9 @@
     font-family="Consolas, 'Courier New', monospace"
     font-size="18"
     font-weight="700"
-  >&lt;/&gt;</text>
+  >
+    &lt;/&gt;
+  </text>
 
   <text
     x="88"
@@ -200,9 +259,13 @@
     fill="#91C9E4"
     font-family="Consolas, 'Courier New', monospace"
     font-size="17"
-  >Desarrollador Frontend &amp; Full Stack</text>
+  >
+    Desarrollador Frontend &amp; Full Stack
+  </text>
 
-  <!-- TERMINAL -->
+  <!-- =====================================================
+       TERMINAL
+  ====================================================== -->
 
   <rect
     x="42"
@@ -214,7 +277,14 @@
     fill-opacity="0.92"
     stroke="#145978"
     stroke-width="1.2"
-  />
+  >
+    <animate
+      attributeName="stroke-opacity"
+      values="0.6;1;0.6"
+      dur="4s"
+      repeatCount="indefinite"
+    />
+  </rect>
 
   <!-- Línea 1 -->
 
@@ -224,7 +294,9 @@
     fill="#467392"
     font-family="Consolas, 'Courier New', monospace"
     font-size="15"
-  >1</text>
+  >
+    1
+  </text>
 
   <text
     x="92"
@@ -233,7 +305,9 @@
     font-family="Consolas, 'Courier New', monospace"
     font-size="15"
     font-weight="700"
-  >const</text>
+  >
+    const
+  </text>
 
   <text
     x="143"
@@ -241,7 +315,9 @@
     fill="#FFFFFF"
     font-family="Consolas, 'Courier New', monospace"
     font-size="15"
-  >developer =</text>
+  >
+    developer =
+  </text>
 
   <text
     x="244"
@@ -249,7 +325,9 @@
     fill="#FFD936"
     font-family="Consolas, 'Courier New', monospace"
     font-size="15"
-  >{</text>
+  >
+    {
+  </text>
 
   <!-- Línea 2 -->
 
@@ -259,7 +337,9 @@
     fill="#467392"
     font-family="Consolas, 'Courier New', monospace"
     font-size="15"
-  >2</text>
+  >
+    2
+  </text>
 
   <text
     x="92"
@@ -268,7 +348,9 @@
     font-family="Consolas, 'Courier New', monospace"
     font-size="15"
     font-weight="700"
-  >focus:</text>
+  >
+    focus:
+  </text>
 
   <text
     x="151"
@@ -276,7 +358,9 @@
     fill="#42F0B6"
     font-family="Consolas, 'Courier New', monospace"
     font-size="15"
-  >['React', 'JavaScript', 'Python', 'SQL', 'Laravel'],</text>
+  >
+    ['React', 'JavaScript', 'Python', 'SQL', 'Laravel'],
+  </text>
 
   <!-- Línea 3 -->
 
@@ -286,7 +370,9 @@
     fill="#467392"
     font-family="Consolas, 'Courier New', monospace"
     font-size="15"
-  >3</text>
+  >
+    3
+  </text>
 
   <text
     x="92"
@@ -295,7 +381,9 @@
     font-family="Consolas, 'Courier New', monospace"
     font-size="15"
     font-weight="700"
-  >goal:</text>
+  >
+    goal:
+  </text>
 
   <text
     x="143"
@@ -303,7 +391,9 @@
     fill="#42F0B6"
     font-family="Consolas, 'Courier New', monospace"
     font-size="15"
-  >'Resolver problemas, crear valor y automatizar procesos.'</text>
+  >
+    'Resolver problemas, crear valor y automatizar procesos.'
+  </text>
 
   <!-- Línea 4 -->
 
@@ -313,7 +403,9 @@
     fill="#467392"
     font-family="Consolas, 'Courier New', monospace"
     font-size="15"
-  >4</text>
+  >
+    4
+  </text>
 
   <text
     x="92"
@@ -321,9 +413,15 @@
     fill="#FFFFFF"
     font-family="Consolas, 'Courier New', monospace"
     font-size="15"
-  >};</text>
+  >
+    };
+  </text>
 
-  <!-- TECNOLOGÍAS -->
+  <!-- =====================================================
+       TECNOLOGÍAS
+  ====================================================== -->
+
+  <!-- React -->
 
   <rect
     x="42"
@@ -334,7 +432,14 @@
     fill="#04101A"
     stroke="#00E5FF"
     stroke-width="1.2"
-  />
+  >
+    <animate
+      attributeName="stroke-opacity"
+      values="0.65;1;0.65"
+      dur="3s"
+      repeatCount="indefinite"
+    />
+  </rect>
 
   <text
     x="94.5"
@@ -344,8 +449,11 @@
     font-family="Arial, Helvetica, sans-serif"
     font-size="15"
     font-weight="700"
-  >React</text>
+  >
+    React
+  </text>
 
+  <!-- JavaScript -->
 
   <rect
     x="158"
@@ -356,7 +464,15 @@
     fill="#04101A"
     stroke="#E0C52E"
     stroke-width="1.2"
-  />
+  >
+    <animate
+      attributeName="stroke-opacity"
+      values="0.65;1;0.65"
+      dur="3s"
+      begin="0.3s"
+      repeatCount="indefinite"
+    />
+  </rect>
 
   <text
     x="227"
@@ -366,8 +482,11 @@
     font-family="Arial, Helvetica, sans-serif"
     font-size="15"
     font-weight="700"
-  >JavaScript</text>
+  >
+    JavaScript
+  </text>
 
+  <!-- Python -->
 
   <rect
     x="307"
@@ -378,7 +497,15 @@
     fill="#04101A"
     stroke="#3995CF"
     stroke-width="1.2"
-  />
+  >
+    <animate
+      attributeName="stroke-opacity"
+      values="0.65;1;0.65"
+      dur="3s"
+      begin="0.6s"
+      repeatCount="indefinite"
+    />
+  </rect>
 
   <text
     x="359.5"
@@ -388,8 +515,11 @@
     font-family="Arial, Helvetica, sans-serif"
     font-size="15"
     font-weight="700"
-  >Python</text>
+  >
+    Python
+  </text>
 
+  <!-- SQL -->
 
   <rect
     x="423"
@@ -400,7 +530,15 @@
     fill="#04101A"
     stroke="#00DFFF"
     stroke-width="1.2"
-  />
+  >
+    <animate
+      attributeName="stroke-opacity"
+      values="0.65;1;0.65"
+      dur="3s"
+      begin="0.9s"
+      repeatCount="indefinite"
+    />
+  </rect>
 
   <text
     x="468"
@@ -410,8 +548,11 @@
     font-family="Arial, Helvetica, sans-serif"
     font-size="15"
     font-weight="700"
-  >SQL</text>
+  >
+    SQL
+  </text>
 
+  <!-- Laravel -->
 
   <rect
     x="524"
@@ -422,7 +563,15 @@
     fill="#04101A"
     stroke="#FF493D"
     stroke-width="1.2"
-  />
+  >
+    <animate
+      attributeName="stroke-opacity"
+      values="0.65;1;0.65"
+      dur="3s"
+      begin="1.2s"
+      repeatCount="indefinite"
+    />
+  </rect>
 
   <text
     x="579"
@@ -432,16 +581,29 @@
     font-family="Arial, Helvetica, sans-serif"
     font-size="15"
     font-weight="700"
-  >Laravel</text>
+  >
+    Laravel
+  </text>
 
-  <!-- LÍNEAS DERECHAS -->
+  <!-- =====================================================
+       CIRCUITOS DERECHOS
+  ====================================================== -->
 
   <path
     d="M735 120 H825 L855 90 H955"
     stroke="#087CA8"
     stroke-width="1.2"
     opacity="0.5"
-  />
+    stroke-dasharray="10 8"
+  >
+    <animate
+      attributeName="stroke-dashoffset"
+      from="0"
+      to="-36"
+      dur="3s"
+      repeatCount="indefinite"
+    />
+  </path>
 
   <circle
     cx="735"
@@ -449,14 +611,30 @@
     r="3"
     fill="#00E5FF"
     filter="url(#smallGlow)"
-  />
+  >
+    <animate
+      attributeName="opacity"
+      values="0.25;1;0.25"
+      dur="1.7s"
+      repeatCount="indefinite"
+    />
+  </circle>
 
   <path
     d="M1030 90 H1090 L1120 60 H1170"
     stroke="#087CA8"
     stroke-width="1.2"
     opacity="0.45"
-  />
+    stroke-dasharray="10 8"
+  >
+    <animate
+      attributeName="stroke-dashoffset"
+      from="0"
+      to="-36"
+      dur="3.4s"
+      repeatCount="indefinite"
+    />
+  </path>
 
   <circle
     cx="1170"
@@ -464,14 +642,30 @@
     r="3"
     fill="#00E5FF"
     filter="url(#smallGlow)"
-  />
+  >
+    <animate
+      attributeName="opacity"
+      values="1;0.2;1"
+      dur="2s"
+      repeatCount="indefinite"
+    />
+  </circle>
 
   <path
     d="M735 315 H825 L855 345 H955"
     stroke="#087CA8"
     stroke-width="1.2"
     opacity="0.45"
-  />
+    stroke-dasharray="10 8"
+  >
+    <animate
+      attributeName="stroke-dashoffset"
+      from="-36"
+      to="0"
+      dur="3.2s"
+      repeatCount="indefinite"
+    />
+  </path>
 
   <circle
     cx="735"
@@ -479,14 +673,30 @@
     r="3"
     fill="#00E5FF"
     filter="url(#smallGlow)"
-  />
+  >
+    <animate
+      attributeName="opacity"
+      values="0.2;1;0.2"
+      dur="2.3s"
+      repeatCount="indefinite"
+    />
+  </circle>
 
   <path
     d="M1030 345 H1090 L1120 375 H1170"
     stroke="#087CA8"
     stroke-width="1.2"
     opacity="0.45"
-  />
+    stroke-dasharray="10 8"
+  >
+    <animate
+      attributeName="stroke-dashoffset"
+      from="-36"
+      to="0"
+      dur="3.7s"
+      repeatCount="indefinite"
+    />
+  </path>
 
   <circle
     cx="1170"
@@ -494,9 +704,18 @@
     r="3"
     fill="#00E5FF"
     filter="url(#smallGlow)"
-  />
+  >
+    <animate
+      attributeName="opacity"
+      values="1;0.25;1"
+      dur="2.5s"
+      repeatCount="indefinite"
+    />
+  </circle>
 
-  <!-- HUD -->
+  <!-- =====================================================
+       HUD ANIMADO
+  ====================================================== -->
 
   <circle
     cx="950"
@@ -507,6 +726,8 @@
     stroke-opacity="0.35"
   />
 
+  <!-- Giro horario -->
+
   <circle
     cx="950"
     cy="205"
@@ -515,7 +736,19 @@
     stroke-width="1.3"
     stroke-dasharray="9 8"
     stroke-opacity="0.5"
-  />
+  >
+    <animateTransform
+      attributeName="transform"
+      attributeType="XML"
+      type="rotate"
+      from="0 950 205"
+      to="360 950 205"
+      dur="18s"
+      repeatCount="indefinite"
+    />
+  </circle>
+
+  <!-- Giro antihorario -->
 
   <circle
     cx="950"
@@ -525,37 +758,61 @@
     stroke-width="1"
     stroke-dasharray="3 8"
     stroke-opacity="0.35"
-  />
+  >
+    <animateTransform
+      attributeName="transform"
+      attributeType="XML"
+      type="rotate"
+      from="360 950 205"
+      to="0 950 205"
+      dur="13s"
+      repeatCount="indefinite"
+    />
+  </circle>
 
-  <!-- ICONO < / > -->
+  <!-- =====================================================
+       ICONO </> CON PULSO
+  ====================================================== -->
 
-  <path
-    d="M910 160 L858 205 L910 250"
-    stroke="#22E2FF"
-    stroke-width="11"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    filter="url(#cyanGlow)"
-  />
+  <g>
+    <animate
+      attributeName="opacity"
+      values="0.82;1;0.82"
+      dur="2.4s"
+      repeatCount="indefinite"
+    />
 
-  <path
-    d="M965 142 L935 270"
-    stroke="#22E2FF"
-    stroke-width="12"
-    stroke-linecap="round"
-    filter="url(#cyanGlow)"
-  />
+    <path
+      d="M910 160 L858 205 L910 250"
+      stroke="#22E2FF"
+      stroke-width="11"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      filter="url(#cyanGlow)"
+    />
 
-  <path
-    d="M993 160 L1045 205 L993 250"
-    stroke="#22E2FF"
-    stroke-width="11"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    filter="url(#cyanGlow)"
-  />
+    <path
+      d="M965 142 L935 270"
+      stroke="#22E2FF"
+      stroke-width="12"
+      stroke-linecap="round"
+      filter="url(#cyanGlow)"
+    />
 
-  <!-- TEXTO DERECHO -->
+    <path
+      d="M993 160 L1045 205 L993 250"
+      stroke="#22E2FF"
+      stroke-width="11"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      filter="url(#cyanGlow)"
+    />
+
+  </g>
+
+  <!-- =====================================================
+       TEXTO DERECHO
+  ====================================================== -->
 
   <text
     x="896"
@@ -564,14 +821,23 @@
     font-family="Consolas, 'Courier New', monospace"
     font-size="16"
     font-weight="600"
-  >Desarrollo</text>
+  >
+    Desarrollo
+  </text>
 
   <circle
     cx="982"
     cy="368"
     r="3"
     fill="#00E5FF"
-  />
+  >
+    <animate
+      attributeName="opacity"
+      values="0.3;1;0.3"
+      dur="1.8s"
+      repeatCount="indefinite"
+    />
+  </circle>
 
   <text
     x="996"
@@ -580,6 +846,8 @@
     font-family="Consolas, 'Courier New', monospace"
     font-size="16"
     font-weight="600"
-  >Automatización</text>
+  >
+    Automatización
+  </text>
 
 </svg>
