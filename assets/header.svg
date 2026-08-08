@@ -6,12 +6,19 @@
   xmlns="http://www.w3.org/2000/svg"
 >
   <defs>
-    <!-- Fondo -->
-    <linearGradient id="background" x1="0" y1="0" x2="1200" y2="430">
-      <stop stop-color="#02070D"/>
-      <stop offset="0.5" stop-color="#04111D"/>
-      <stop offset="1" stop-color="#020812"/>
+    <!-- Fondo degradado -->
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="1200" y2="430" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#030B14"/>
+      <stop offset="50%" stop-color="#04111D"/>
+      <stop offset="100%" stop-color="#071829"/>
     </linearGradient>
+
+    <!-- Degradado del círculo interior -->
+    <radialGradient id="photoBg" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+      gradientTransform="translate(235 205) rotate(90) scale(110 110)">
+      <stop offset="0%" stop-color="#123149"/>
+      <stop offset="100%" stop-color="#07131E"/>
+    </radialGradient>
 
     <!-- Brillo fuerte -->
     <filter id="cyanGlow" x="-100%" y="-100%" width="300%" height="300%">
@@ -42,89 +49,96 @@
       />
     </pattern>
 
-    <!-- Recorte para la futura foto -->
+    <!-- Recorte para futura foto -->
     <clipPath id="profileClip">
       <circle cx="235" cy="205" r="96"/>
     </clipPath>
   </defs>
 
   <!-- Fondo principal -->
-  <rect
-    width="1200"
-    height="430"
-    rx="26"
-    fill="url(#background)"
-  />
+  <rect x="10" y="10" width="1180" height="410" rx="24" fill="url(#bgGradient)" stroke="#0CCEF2" stroke-opacity="0.35"/>
+  <rect x="10" y="10" width="1180" height="410" rx="24" fill="url(#grid)"/>
 
-  <rect
-    width="1200"
-    height="430"
-    rx="26"
-    fill="url(#grid)"
-  />
+  <!-- Barra superior -->
+  <line x1="10" y1="58" x2="1190" y2="58" stroke="#0CCEF2" stroke-opacity="0.18"/>
+  <text
+    x="44"
+    y="39"
+    fill="#00E5FF"
+    font-family="Consolas, monospace"
+    font-size="19"
+    font-weight="700"
+  >&gt;_</text>
 
-  <!-- Borde exterior -->
-  <rect
-    x="2"
-    y="2"
-    width="1196"
-    height="426"
-    rx="24"
-    stroke="#00D9FF"
+  <text
+    x="84"
+    y="39"
+    fill="#00E5FF"
+    font-family="Segoe UI, Arial, sans-serif"
+    font-size="17"
+    font-weight="700"
+  >Ricard01117</text>
+
+  <text
+    x="205"
+    y="39"
+    fill="#D5E7F2"
+    font-family="Segoe UI, Arial, sans-serif"
+    font-size="17"
+  >/ README.md</text>
+
+  <!-- Divisor vertical -->
+  <line x1="395" y1="92" x2="395" y2="382" stroke="#0CCEF2" stroke-opacity="0.16"/>
+
+  <!-- Órbitas -->
+  <ellipse
+    cx="235"
+    cy="205"
+    rx="136"
+    ry="42"
+    transform="rotate(-28 235 205)"
+    stroke="#00DFFF"
+    stroke-width="1.4"
     stroke-opacity="0.65"
-    stroke-width="2"
+  />
+  <ellipse
+    cx="235"
+    cy="205"
+    rx="136"
+    ry="42"
+    transform="rotate(28 235 205)"
+    stroke="#00DFFF"
+    stroke-width="1.4"
+    stroke-opacity="0.45"
   />
 
-  <!-- Luces decorativas -->
-  <circle
-    cx="75"
-    cy="70"
-    r="3"
-    fill="#00F5FF"
-    filter="url(#smallGlow)"
-  />
-
-  <circle
-    cx="1080"
-    cy="75"
-    r="3"
-    fill="#008CFF"
-    filter="url(#smallGlow)"
-  />
-
-  <circle cx="1130" cy="160" r="2" fill="#00F5FF"/>
-  <circle cx="1020" cy="350" r="2" fill="#00F5FF"/>
-  <circle cx="530" cy="60" r="2" fill="#008CFF"/>
-
-  <!-- Círculo exterior de la foto -->
+  <!-- Círculo exterior -->
   <circle
     cx="235"
     cy="205"
-    r="122"
-    fill="#03121D"
+    r="112"
     stroke="#00E5FF"
-    stroke-width="3"
+    stroke-width="5"
     filter="url(#cyanGlow)"
   />
 
-  <!-- Fondo interior -->
+  <!-- Aro interior -->
   <circle
     cx="235"
     cy="205"
     r="101"
-    fill="#071824"
-    stroke="#54F5F5"
-    stroke-width="8"
+    stroke="#A7F8FF"
+    stroke-width="10"
+    opacity="0.95"
   />
 
-  <!-- Marcador temporal de foto -->
-  <circle
-    cx="235"
-    cy="205"
-    r="96"
-    fill="#071824"
-  />
+  <!-- Área de futura foto -->
+  <g clip-path="url(#profileClip)">
+    <circle cx="235" cy="205" r="96" fill="url(#photoBg)"/>
+    <rect x="139" y="109" width="192" height="192" fill="url(#photoBg)"/>
+  </g>
 
+  <!-- Texto temporal de foto -->
   <text
     x="235"
     y="198"
@@ -148,146 +162,6 @@
     próximamente
   </text>
 
-  <!-- Borde interior -->
-  <circle
-    cx="235"
-    cy="205"
-    r="96"
-    fill="none"
-    stroke="#B8FFFF"
-    stroke-width="3"
-  />
-
-  <!-- Órbitas -->
-  <ellipse
-    cx="235"
-    cy="205"
-    rx="170"
-    ry="62"
-    stroke="#00D9FF"
-    stroke-opacity="0.6"
-    stroke-width="1.5"
-    transform="rotate(-14 235 205)"
-  />
-
-  <ellipse
-    cx="235"
-    cy="205"
-    rx="160"
-    ry="55"
-    stroke="#0077FF"
-    stroke-opacity="0.35"
-    stroke-width="1"
-    transform="rotate(24 235 205)"
-  />
-
-  <!-- Título principal -->
-  <text
-    x="420"
-    y="105"
-    fill="#FFFFFF"
-    font-family="Segoe UI, Arial, sans-serif"
-    font-size="39"
-    font-weight="700"
-  >
-    Construyendo soluciones reales
-  </text>
-
-  <text
-    x="420"
-    y="153"
-    fill="#FFFFFF"
-    font-family="Segoe UI, Arial, sans-serif"
-    font-size="39"
-    font-weight="700"
-  >
-    con código que
-  </text>
-
-  <text
-    x="690"
-    y="153"
-    fill="#00F0E6"
-    font-family="Segoe UI, Arial, sans-serif"
-    font-size="39"
-    font-weight="700"
-    filter="url(#smallGlow)"
-  >
-    transforma.
-  </text>
-
-  <!-- Línea decorativa -->
-  <rect
-    x="420"
-    y="178"
-    width="72"
-    height="4"
-    rx="2"
-    fill="#00E5FF"
-    filter="url(#smallGlow)"
-  />
-
-  <!-- Fragmento de código -->
-  <text
-    x="420"
-    y="220"
-    fill="#67A9C4"
-    font-family="Consolas, monospace"
-    font-size="17"
-  >
-    const developer = {
-  </text>
-
-  <text
-    x="445"
-    y="250"
-    fill="#45E78D"
-    font-family="Consolas, monospace"
-    font-size="17"
-  >
-    focus:
-  </text>
-
-  <text
-    x="510"
-    y="250"
-    fill="#F6C453"
-    font-family="Consolas, monospace"
-    font-size="17"
-  >
-    ['React', 'JavaScript', 'Python', 'SQL', 'Laravel'],
-  </text>
-
-  <text
-    x="445"
-    y="280"
-    fill="#45E78D"
-    font-family="Consolas, monospace"
-    font-size="17"
-  >
-    goal:
-  </text>
-
-  <text
-    x="500"
-    y="280"
-    fill="#F6C453"
-    font-family="Consolas, monospace"
-    font-size="17"
-  >
-    'Resolver problemas y automatizar procesos.'
-  </text>
-
-  <text
-    x="420"
-    y="310"
-    fill="#67A9C4"
-    font-family="Consolas, monospace"
-    font-size="17"
-  >
-    };
-  </text>
-
   <!-- Nombre -->
   <text
     x="235"
@@ -302,9 +176,10 @@
     Ricardo Castro
   </text>
 
+  <!-- Usuario -->
   <text
     x="235"
-    y="405"
+    y="404"
     text-anchor="middle"
     fill="#00E5FF"
     font-family="Consolas, monospace"
@@ -314,9 +189,117 @@
     &lt;/&gt; Ricard01117
   </text>
 
-  <!-- Icono de código -->
+  <!-- Título principal -->
   <text
-    x="1040"
+    x="435"
+    y="105"
+    fill="#FFFFFF"
+    font-family="Segoe UI, Arial, sans-serif"
+    font-size="39"
+    font-weight="700"
+  >
+    Construyendo soluciones reales
+  </text>
+
+  <text
+    x="435"
+    y="153"
+    fill="#FFFFFF"
+    font-family="Segoe UI, Arial, sans-serif"
+    font-size="39"
+    font-weight="700"
+  >
+    con código que
+  </text>
+
+  <text
+    x="705"
+    y="153"
+    fill="#00F0E6"
+    font-family="Segoe UI, Arial, sans-serif"
+    font-size="39"
+    font-weight="700"
+    filter="url(#smallGlow)"
+  >
+    transforma.
+  </text>
+
+  <!-- Línea decorativa -->
+  <line
+    x1="435"
+    y1="180"
+    x2="485"
+    y2="180"
+    stroke="#00F0E6"
+    stroke-width="4"
+    stroke-linecap="round"
+    filter="url(#smallGlow)"
+  />
+
+  <!-- Código -->
+  <text
+    x="435"
+    y="220"
+    fill="#67A9C4"
+    font-family="Consolas, monospace"
+    font-size="17"
+  >
+    const developer = {
+  </text>
+
+  <text
+    x="460"
+    y="250"
+    fill="#45E78D"
+    font-family="Consolas, monospace"
+    font-size="17"
+  >
+    focus:
+  </text>
+
+  <text
+    x="525"
+    y="250"
+    fill="#F6C453"
+    font-family="Consolas, monospace"
+    font-size="17"
+  >
+    ['React', 'JavaScript', 'Python', 'SQL', 'Laravel'],
+  </text>
+
+  <text
+    x="460"
+    y="280"
+    fill="#45E78D"
+    font-family="Consolas, monospace"
+    font-size="17"
+  >
+    goal:
+  </text>
+
+  <text
+    x="515"
+    y="280"
+    fill="#F6C453"
+    font-family="Consolas, monospace"
+    font-size="17"
+  >
+    'Resolver problemas y automatizar procesos.'
+  </text>
+
+  <text
+    x="435"
+    y="310"
+    fill="#67A9C4"
+    font-family="Consolas, monospace"
+    font-size="17"
+  >
+    };
+  </text>
+
+  <!-- Icono derecho -->
+  <text
+    x="1038"
     y="245"
     text-anchor="middle"
     fill="#00DFFF"
@@ -329,7 +312,7 @@
   </text>
 
   <text
-    x="1040"
+    x="1038"
     y="292"
     text-anchor="middle"
     fill="#5DA4C2"
