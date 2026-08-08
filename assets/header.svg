@@ -6,23 +6,30 @@
   xmlns="http://www.w3.org/2000/svg"
 >
   <defs>
-    <!-- Fondo degradado -->
-    <linearGradient id="bgGradient" x1="0" y1="0" x2="1200" y2="430" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#030B14"/>
-      <stop offset="50%" stop-color="#04111D"/>
-      <stop offset="100%" stop-color="#071829"/>
+
+    <!-- Fondo -->
+    <linearGradient
+      id="background"
+      x1="0"
+      y1="0"
+      x2="1200"
+      y2="430"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop stop-color="#02070D"/>
+      <stop offset="0.5" stop-color="#04111D"/>
+      <stop offset="1" stop-color="#020812"/>
     </linearGradient>
 
-    <!-- Degradado del círculo interior -->
-    <radialGradient id="photoBg" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-      gradientTransform="translate(235 205) rotate(90) scale(110 110)">
-      <stop offset="0%" stop-color="#123149"/>
-      <stop offset="100%" stop-color="#07131E"/>
-    </radialGradient>
-
-    <!-- Brillo fuerte -->
-    <filter id="cyanGlow" x="-100%" y="-100%" width="300%" height="300%">
-      <feGaussianBlur stdDeviation="7" result="blur"/>
+    <!-- Brillo cyan -->
+    <filter
+      id="cyanGlow"
+      x="-100%"
+      y="-100%"
+      width="300%"
+      height="300%"
+    >
+      <feGaussianBlur stdDeviation="6" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
@@ -30,8 +37,14 @@
     </filter>
 
     <!-- Brillo pequeño -->
-    <filter id="smallGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
+    <filter
+      id="smallGlow"
+      x="-100%"
+      y="-100%"
+      width="300%"
+      height="300%"
+    >
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
@@ -39,286 +52,663 @@
     </filter>
 
     <!-- Cuadrícula -->
-    <pattern id="grid" width="38" height="38" patternUnits="userSpaceOnUse">
+    <pattern
+      id="grid"
+      width="35"
+      height="35"
+      patternUnits="userSpaceOnUse"
+    >
       <path
-        d="M 38 0 L 0 0 0 38"
+        d="M 35 0 L 0 0 0 35"
         fill="none"
         stroke="#0C3750"
         stroke-width="0.7"
-        opacity="0.25"
+        opacity="0.22"
       />
     </pattern>
 
-    <!-- Recorte para futura foto -->
-    <clipPath id="profileClip">
-      <circle cx="235" cy="205" r="96"/>
-    </clipPath>
+    <!-- Gradiente del icono -->
+    <linearGradient
+      id="iconGradient"
+      x1="790"
+      y1="120"
+      x2="1080"
+      y2="340"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop stop-color="#9AFFFF"/>
+      <stop offset="0.45" stop-color="#00E5FF"/>
+      <stop offset="1" stop-color="#008CFF"/>
+    </linearGradient>
+
   </defs>
 
-  <!-- Fondo principal -->
-  <rect x="10" y="10" width="1180" height="410" rx="24" fill="url(#bgGradient)" stroke="#0CCEF2" stroke-opacity="0.35"/>
-  <rect x="10" y="10" width="1180" height="410" rx="24" fill="url(#grid)"/>
+  <!-- =================================================
+       FONDO
+  ================================================== -->
 
-  <!-- Barra superior -->
-  <line x1="10" y1="58" x2="1190" y2="58" stroke="#0CCEF2" stroke-opacity="0.18"/>
+  <rect
+    width="1200"
+    height="430"
+    rx="24"
+    fill="url(#background)"
+  />
+
+  <rect
+    width="1200"
+    height="430"
+    rx="24"
+    fill="url(#grid)"
+  />
+
+  <rect
+    x="2"
+    y="2"
+    width="1196"
+    height="426"
+    rx="22"
+    stroke="#00D9FF"
+    stroke-opacity="0.32"
+    stroke-width="2"
+  />
+
+  <!-- =================================================
+       BARRA SUPERIOR
+  ================================================== -->
+
   <text
-    x="44"
-    y="39"
+    x="38"
+    y="40"
     fill="#00E5FF"
     font-family="Consolas, monospace"
-    font-size="19"
-    font-weight="700"
-  >&gt;_</text>
-
-  <text
-    x="84"
-    y="39"
-    fill="#00E5FF"
-    font-family="Segoe UI, Arial, sans-serif"
-    font-size="17"
-    font-weight="700"
-  >Ricard01117</text>
-
-  <text
-    x="205"
-    y="39"
-    fill="#D5E7F2"
-    font-family="Segoe UI, Arial, sans-serif"
-    font-size="17"
-  >/ README.md</text>
-
-  <!-- Divisor vertical -->
-  <line x1="395" y1="92" x2="395" y2="382" stroke="#0CCEF2" stroke-opacity="0.16"/>
-
-  <!-- Órbitas -->
-  <ellipse
-    cx="235"
-    cy="205"
-    rx="136"
-    ry="42"
-    transform="rotate(-28 235 205)"
-    stroke="#00DFFF"
-    stroke-width="1.4"
-    stroke-opacity="0.65"
-  />
-  <ellipse
-    cx="235"
-    cy="205"
-    rx="136"
-    ry="42"
-    transform="rotate(28 235 205)"
-    stroke="#00DFFF"
-    stroke-width="1.4"
-    stroke-opacity="0.45"
-  />
-
-  <!-- Círculo exterior -->
-  <circle
-    cx="235"
-    cy="205"
-    r="112"
-    stroke="#00E5FF"
-    stroke-width="5"
-    filter="url(#cyanGlow)"
-  />
-
-  <!-- Aro interior -->
-  <circle
-    cx="235"
-    cy="205"
-    r="101"
-    stroke="#A7F8FF"
-    stroke-width="10"
-    opacity="0.95"
-  />
-
-  <!-- Área de futura foto -->
-  <g clip-path="url(#profileClip)">
-    <circle cx="235" cy="205" r="96" fill="url(#photoBg)"/>
-    <rect x="139" y="109" width="192" height="192" fill="url(#photoBg)"/>
-  </g>
-
-  <!-- Texto temporal de foto -->
-  <text
-    x="235"
-    y="198"
-    text-anchor="middle"
-    fill="#00E5FF"
-    font-family="Segoe UI, Arial, sans-serif"
-    font-size="22"
+    font-size="18"
     font-weight="700"
   >
-    FOTO
+    &gt;_
   </text>
 
   <text
-    x="235"
-    y="226"
-    text-anchor="middle"
-    fill="#67A9C4"
-    font-family="Segoe UI, Arial, sans-serif"
-    font-size="14"
+    x="78"
+    y="40"
+    fill="#00E5FF"
+    font-family="Consolas, monospace"
+    font-size="17"
+    font-weight="700"
   >
-    próximamente
+    Ricard01117
   </text>
 
-  <!-- Nombre -->
   <text
-    x="235"
-    y="370"
-    text-anchor="middle"
+    x="203"
+    y="40"
+    fill="#668EA6"
+    font-family="Consolas, monospace"
+    font-size="17"
+  >
+    //
+  </text>
+
+  <text
+    x="231"
+    y="40"
+    fill="#E5F2F8"
+    font-family="Consolas, monospace"
+    font-size="17"
+  >
+    README.md
+  </text>
+
+  <line
+    x1="38"
+    y1="58"
+    x2="675"
+    y2="58"
+    stroke="#00D9FF"
+    stroke-opacity="0.22"
+  />
+
+  <!-- =================================================
+       NOMBRE PRINCIPAL
+  ================================================== -->
+
+  <text
+    x="42"
+    y="125"
     fill="#FFFFFF"
     font-family="Segoe UI, Arial, sans-serif"
-    font-size="36"
-    font-weight="700"
+    font-size="62"
+    font-weight="750"
     filter="url(#smallGlow)"
   >
     Ricardo Castro
   </text>
 
-  <!-- Usuario -->
-  <text
-    x="235"
-    y="404"
-    text-anchor="middle"
+  <!-- Cursor -->
+  <rect
+    x="448"
+    y="78"
+    width="5"
+    height="55"
+    rx="2"
     fill="#00E5FF"
-    font-family="Consolas, monospace"
-    font-size="20"
+    filter="url(#smallGlow)"
+  >
+    <animate
+      attributeName="opacity"
+      values="1;0.15;1"
+      dur="1.1s"
+      repeatCount="indefinite"
+    />
+  </rect>
+
+  <!-- =================================================
+       FRASE
+  ================================================== -->
+
+  <text
+    x="43"
+    y="170"
+    fill="#F7FAFC"
+    font-family="Segoe UI, Arial, sans-serif"
+    font-size="23"
     font-weight="600"
   >
-    &lt;/&gt; Ricard01117
-  </text>
-
-  <!-- Título principal -->
-  <text
-    x="435"
-    y="105"
-    fill="#FFFFFF"
-    font-family="Segoe UI, Arial, sans-serif"
-    font-size="39"
-    font-weight="700"
-  >
-    Construyendo soluciones reales
+    Construyendo soluciones reales con código que
   </text>
 
   <text
-    x="435"
-    y="153"
-    fill="#FFFFFF"
-    font-family="Segoe UI, Arial, sans-serif"
-    font-size="39"
-    font-weight="700"
-  >
-    con código que
-  </text>
-
-  <text
-    x="705"
-    y="153"
+    x="515"
+    y="170"
     fill="#00F0E6"
     font-family="Segoe UI, Arial, sans-serif"
-    font-size="39"
+    font-size="23"
     font-weight="700"
     filter="url(#smallGlow)"
   >
     transforma.
   </text>
 
-  <!-- Línea decorativa -->
-  <line
-    x1="435"
-    y1="180"
-    x2="485"
-    y2="180"
-    stroke="#00F0E6"
-    stroke-width="4"
-    stroke-linecap="round"
-    filter="url(#smallGlow)"
-  />
-
-  <!-- Código -->
-  <text
-    x="435"
-    y="220"
-    fill="#67A9C4"
-    font-family="Consolas, monospace"
-    font-size="17"
-  >
-    const developer = {
-  </text>
+  <!-- =================================================
+       CARGO
+  ================================================== -->
 
   <text
-    x="460"
-    y="250"
-    fill="#45E78D"
+    x="43"
+    y="205"
+    fill="#00E5FF"
     font-family="Consolas, monospace"
-    font-size="17"
-  >
-    focus:
-  </text>
-
-  <text
-    x="525"
-    y="250"
-    fill="#F6C453"
-    font-family="Consolas, monospace"
-    font-size="17"
-  >
-    ['React', 'JavaScript', 'Python', 'SQL', 'Laravel'],
-  </text>
-
-  <text
-    x="460"
-    y="280"
-    fill="#45E78D"
-    font-family="Consolas, monospace"
-    font-size="17"
-  >
-    goal:
-  </text>
-
-  <text
-    x="515"
-    y="280"
-    fill="#F6C453"
-    font-family="Consolas, monospace"
-    font-size="17"
-  >
-    'Resolver problemas y automatizar procesos.'
-  </text>
-
-  <text
-    x="435"
-    y="310"
-    fill="#67A9C4"
-    font-family="Consolas, monospace"
-    font-size="17"
-  >
-    };
-  </text>
-
-  <!-- Icono derecho -->
-  <text
-    x="1038"
-    y="245"
-    text-anchor="middle"
-    fill="#00DFFF"
-    font-family="Consolas, monospace"
-    font-size="92"
+    font-size="19"
     font-weight="700"
-    filter="url(#cyanGlow)"
   >
     &lt;/&gt;
   </text>
 
   <text
-    x="1038"
-    y="292"
-    text-anchor="middle"
-    fill="#5DA4C2"
+    x="92"
+    y="205"
+    fill="#8FC6E2"
+    font-family="Consolas, monospace"
+    font-size="18"
+  >
+    Desarrollador Frontend &amp; Full Stack
+  </text>
+
+  <!-- =================================================
+       BLOQUE DE CÓDIGO
+  ================================================== -->
+
+  <rect
+    x="42"
+    y="227"
+    width="625"
+    height="115"
+    rx="12"
+    fill="#020A12"
+    fill-opacity="0.8"
+    stroke="#1C5570"
+    stroke-opacity="0.8"
+  />
+
+  <!-- Números -->
+  <text
+    x="60"
+    y="256"
+    fill="#4A7696"
+    font-family="Consolas, monospace"
+    font-size="15"
+  >
+    1
+  </text>
+
+  <text
+    x="60"
+    y="281"
+    fill="#4A7696"
+    font-family="Consolas, monospace"
+    font-size="15"
+  >
+    2
+  </text>
+
+  <text
+    x="60"
+    y="306"
+    fill="#4A7696"
+    font-family="Consolas, monospace"
+    font-size="15"
+  >
+    3
+  </text>
+
+  <text
+    x="60"
+    y="331"
+    fill="#4A7696"
+    font-family="Consolas, monospace"
+    font-size="15"
+  >
+    4
+  </text>
+
+  <!-- Código línea 1 -->
+  <text
+    x="92"
+    y="256"
+    fill="#00E5FF"
+    font-family="Consolas, monospace"
+    font-size="15"
+  >
+    const
+  </text>
+
+  <text
+    x="142"
+    y="256"
+    fill="#FFFFFF"
+    font-family="Consolas, monospace"
+    font-size="15"
+  >
+    developer =
+  </text>
+
+  <text
+    x="245"
+    y="256"
+    fill="#FFD84A"
+    font-family="Consolas, monospace"
+    font-size="15"
+  >
+    {
+  </text>
+
+  <!-- Código línea 2 -->
+  <text
+    x="92"
+    y="281"
+    fill="#D66CFF"
+    font-family="Consolas, monospace"
+    font-size="15"
+  >
+    focus:
+  </text>
+
+  <text
+    x="148"
+    y="281"
+    fill="#42E8B4"
+    font-family="Consolas, monospace"
+    font-size="15"
+  >
+    ['React', 'JavaScript', 'Python', 'SQL', 'Laravel'],
+  </text>
+
+  <!-- Código línea 3 -->
+  <text
+    x="92"
+    y="306"
+    fill="#D66CFF"
+    font-family="Consolas, monospace"
+    font-size="15"
+  >
+    goal:
+  </text>
+
+  <text
+    x="140"
+    y="306"
+    fill="#42E8B4"
+    font-family="Consolas, monospace"
+    font-size="15"
+  >
+    'Resolver problemas, crear valor y automatizar procesos.'
+  </text>
+
+  <!-- Código línea 4 -->
+  <text
+    x="92"
+    y="331"
+    fill="#B8D0DF"
+    font-family="Consolas, monospace"
+    font-size="15"
+  >
+    };
+  </text>
+
+  <!-- =================================================
+       TECNOLOGÍAS
+  ================================================== -->
+
+  <!-- React -->
+  <rect
+    x="42"
+    y="362"
+    width="110"
+    height="42"
+    rx="10"
+    fill="#02101A"
+    stroke="#00E5FF"
+    stroke-opacity="0.8"
+  />
+
+  <text
+    x="61"
+    y="389"
+    fill="#00E5FF"
     font-family="Segoe UI, Arial, sans-serif"
     font-size="17"
+    font-weight="700"
   >
-    Desarrollo • Automatización
+    React
   </text>
+
+  <!-- JavaScript -->
+  <rect
+    x="164"
+    y="362"
+    width="145"
+    height="42"
+    rx="10"
+    fill="#02101A"
+    stroke="#FFD42A"
+    stroke-opacity="0.8"
+  />
+
+  <text
+    x="183"
+    y="389"
+    fill="#FFFFFF"
+    font-family="Segoe UI, Arial, sans-serif"
+    font-size="17"
+    font-weight="700"
+  >
+    JavaScript
+  </text>
+
+  <!-- Python -->
+  <rect
+    x="321"
+    y="362"
+    width="110"
+    height="42"
+    rx="10"
+    fill="#02101A"
+    stroke="#3795D3"
+    stroke-opacity="0.9"
+  />
+
+  <text
+    x="341"
+    y="389"
+    fill="#FFFFFF"
+    font-family="Segoe UI, Arial, sans-serif"
+    font-size="17"
+    font-weight="700"
+  >
+    Python
+  </text>
+
+  <!-- SQL -->
+  <rect
+    x="443"
+    y="362"
+    width="90"
+    height="42"
+    rx="10"
+    fill="#02101A"
+    stroke="#00E5FF"
+    stroke-opacity="0.8"
+  />
+
+  <text
+    x="472"
+    y="389"
+    fill="#FFFFFF"
+    font-family="Segoe UI, Arial, sans-serif"
+    font-size="17"
+    font-weight="700"
+  >
+    SQL
+  </text>
+
+  <!-- Laravel -->
+  <rect
+    x="545"
+    y="362"
+    width="122"
+    height="42"
+    rx="10"
+    fill="#02101A"
+    stroke="#FF4438"
+    stroke-opacity="0.85"
+  />
+
+  <text
+    x="568"
+    y="389"
+    fill="#FFFFFF"
+    font-family="Segoe UI, Arial, sans-serif"
+    font-size="17"
+    font-weight="700"
+  >
+    Laravel
+  </text>
+
+  <!-- =================================================
+       LADO DERECHO - HUD
+  ================================================== -->
+
+  <!-- Circuitos decorativos -->
+
+  <path
+    d="M735 112 H820 L850 82 H910"
+    stroke="#0076AA"
+    stroke-width="1.2"
+    opacity="0.45"
+  />
+
+  <path
+    d="M750 152 H835 L865 122 H930"
+    stroke="#00B5E8"
+    stroke-width="1.2"
+    opacity="0.38"
+  />
+
+  <path
+    d="M750 305 H825 L855 335 H935"
+    stroke="#0076AA"
+    stroke-width="1.2"
+    opacity="0.4"
+  />
+
+  <path
+    d="M970 105 H1050 L1080 75 H1160"
+    stroke="#0087C5"
+    stroke-width="1.2"
+    opacity="0.45"
+  />
+
+  <path
+    d="M970 300 H1060 L1090 330 H1165"
+    stroke="#0087C5"
+    stroke-width="1.2"
+    opacity="0.45"
+  />
+
+  <!-- Puntos luminosos -->
+
+  <circle
+    cx="735"
+    cy="112"
+    r="3"
+    fill="#00E5FF"
+    filter="url(#smallGlow)"
+  >
+    <animate
+      attributeName="opacity"
+      values="0.2;1;0.2"
+      dur="2.3s"
+      repeatCount="indefinite"
+    />
+  </circle>
+
+  <circle
+    cx="1160"
+    cy="75"
+    r="3"
+    fill="#00E5FF"
+    filter="url(#smallGlow)"
+  >
+    <animate
+      attributeName="opacity"
+      values="1;0.2;1"
+      dur="2.7s"
+      repeatCount="indefinite"
+    />
+  </circle>
+
+  <circle
+    cx="1165"
+    cy="330"
+    r="3"
+    fill="#00E5FF"
+    filter="url(#smallGlow)"
+  />
+
+  <!-- Círculos HUD -->
+
+  <circle
+    cx="935"
+    cy="215"
+    r="142"
+    stroke="#005A8C"
+    stroke-opacity="0.28"
+    stroke-width="1.2"
+  />
+
+  <circle
+    cx="935"
+    cy="215"
+    r="125"
+    stroke="#00AEEF"
+    stroke-opacity="0.45"
+    stroke-width="1.5"
+    stroke-dasharray="10 8"
+  >
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      from="0 935 215"
+      to="360 935 215"
+      dur="24s"
+      repeatCount="indefinite"
+    />
+  </circle>
+
+  <circle
+    cx="935"
+    cy="215"
+    r="107"
+    stroke="#0077C8"
+    stroke-opacity="0.25"
+    stroke-width="1"
+    stroke-dasharray="4 10"
+  >
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      from="360 935 215"
+      to="0 935 215"
+      dur="18s"
+      repeatCount="indefinite"
+    />
+  </circle>
+
+  <!-- =================================================
+       ICONO </> GRANDE
+  ================================================== -->
+
+  <!-- < -->
+  <path
+    d="M880 166 L825 215 L880 264"
+    stroke="url(#iconGradient)"
+    stroke-width="12"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    filter="url(#cyanGlow)"
+  />
+
+  <!-- / -->
+  <path
+    d="M948 145 L915 286"
+    stroke="url(#iconGradient)"
+    stroke-width="13"
+    stroke-linecap="round"
+    filter="url(#cyanGlow)"
+  />
+
+  <!-- > -->
+  <path
+    d="M973 166 L1028 215 L973 264"
+    stroke="url(#iconGradient)"
+    stroke-width="12"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    filter="url(#cyanGlow)"
+  />
+
+  <!-- =================================================
+       TEXTO DERECHO
+  ================================================== -->
+
+  <text
+    x="935"
+    y="371"
+    text-anchor="middle"
+    fill="#D8EAF4"
+    font-family="Consolas, monospace"
+    font-size="17"
+    font-weight="600"
+  >
+    Desarrollo
+  </text>
+
+  <circle
+    cx="1004"
+    cy="366"
+    r="3"
+    fill="#00E5FF"
+  />
+
+  <text
+    x="1075"
+    y="371"
+    text-anchor="middle"
+    fill="#D8EAF4"
+    font-family="Consolas, monospace"
+    font-size="17"
+    font-weight="600"
+  >
+    Automatización
+  </text>
+
 </svg>
