@@ -6,13 +6,14 @@
   xmlns="http://www.w3.org/2000/svg"
 >
   <defs>
-    <!-- Fondo y cuadrícula -->
+    <!-- Fondo -->
     <linearGradient id="bgGradient" x1="0" y1="0" x2="1200" y2="430" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#03101C"/>
       <stop offset="50%" stop-color="#041525"/>
       <stop offset="100%" stop-color="#07111B"/>
     </linearGradient>
 
+    <!-- Cuadrícula -->
     <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
       <path
         d="M 34 0 L 0 0 0 34"
@@ -49,12 +50,21 @@
     </filter>
   </defs>
 
-  <!-- Fondo -->
+  <!-- Fondo general -->
   <rect width="1200" height="430" rx="24" fill="url(#bgGradient)"/>
   <rect width="1200" height="430" rx="24" fill="url(#grid)"/>
-  <rect x="1.5" y="1.5" width="1197" height="427" rx="22.5" stroke="#09D7FF" stroke-opacity="0.45" stroke-width="1.5"/>
+  <rect
+    x="1.5"
+    y="1.5"
+    width="1197"
+    height="427"
+    rx="22.5"
+    stroke="#09D7FF"
+    stroke-opacity="0.45"
+    stroke-width="1.5"
+  />
 
-  <!-- Línea superior -->
+  <!-- Cabecera terminal -->
   <text
     x="38"
     y="38"
@@ -93,7 +103,7 @@
   <!-- Nombre -->
   <text
     x="42"
-    y="120"
+    y="118"
     fill="#FFFFFF"
     font-family="Segoe UI, Arial, sans-serif"
     font-size="78"
@@ -103,10 +113,10 @@
     Ricardo Castro
   </text>
 
-  <!-- Cursor a un lado del nombre -->
+  <!-- Cursor al final del nombre -->
   <rect
-    x="470"
-    y="72"
+    x="560"
+    y="70"
     width="6"
     height="58"
     rx="3"
@@ -114,22 +124,32 @@
     filter="url(#softGlow)"
   />
 
-  <!-- Frase principal -->
+  <!-- Frase principal en 2 renglones -->
   <text
     x="42"
     y="165"
     fill="#FFFFFF"
     font-family="Segoe UI, Arial, sans-serif"
     font-size="29"
-    font-weight="500"
+    font-weight="600"
   >
-    Construyendo soluciones reales con código que
+    Construyendo soluciones reales
   </text>
 
-  <!-- transformA separado para que no se encime -->
   <text
-    x="560"
-    y="165"
+    x="42"
+    y="200"
+    fill="#FFFFFF"
+    font-family="Segoe UI, Arial, sans-serif"
+    font-size="29"
+    font-weight="600"
+  >
+    con código que
+  </text>
+
+  <text
+    x="322"
+    y="200"
     fill="#00F0E6"
     font-family="Segoe UI, Arial, sans-serif"
     font-size="29"
@@ -139,12 +159,12 @@
     transforma.
   </text>
 
-  <line x1="42" y1="184" x2="640" y2="184" stroke="#11D8FF" stroke-opacity="0.28"/>
+  <line x1="42" y1="214" x2="640" y2="214" stroke="#11D8FF" stroke-opacity="0.28"/>
 
   <!-- Subtítulo -->
   <text
     x="42"
-    y="212"
+    y="242"
     fill="#00E5FF"
     font-family="Consolas, 'Courier New', monospace"
     font-size="21"
@@ -155,7 +175,7 @@
 
   <text
     x="85"
-    y="212"
+    y="242"
     fill="#A9D8F0"
     font-family="Consolas, 'Courier New', monospace"
     font-size="20"
@@ -166,9 +186,9 @@
   <!-- Caja de código -->
   <rect
     x="40"
-    y="238"
+    y="260"
     width="630"
-    height="112"
+    height="108"
     rx="14"
     fill="#07131E"
     fill-opacity="0.85"
@@ -177,68 +197,69 @@
     stroke-width="1.3"
   />
 
-  <text x="60" y="276" fill="#4B78B6" font-family="Consolas, monospace" font-size="18">1</text>
-  <text x="60" y="300" fill="#4B78B6" font-family="Consolas, monospace" font-size="18">2</text>
-  <text x="60" y="324" fill="#4B78B6" font-family="Consolas, monospace" font-size="18">3</text>
-  <text x="60" y="348" fill="#4B78B6" font-family="Consolas, monospace" font-size="18">4</text>
+  <!-- Números -->
+  <text x="60" y="294" fill="#4B78B6" font-family="Consolas, monospace" font-size="18">1</text>
+  <text x="60" y="320" fill="#4B78B6" font-family="Consolas, monospace" font-size="18">2</text>
+  <text x="60" y="346" fill="#4B78B6" font-family="Consolas, monospace" font-size="18">3</text>
+  <text x="60" y="372" fill="#4B78B6" font-family="Consolas, monospace" font-size="18">4</text>
 
-  <text x="92" y="276" fill="#00F0E6" font-family="Consolas, monospace" font-size="18" font-weight="700">const</text>
-  <text x="145" y="276" fill="#FFFFFF" font-family="Consolas, monospace" font-size="18">developer = {</text>
+  <!-- Código -->
+  <text x="92" y="294" fill="#00F0E6" font-family="Consolas, monospace" font-size="18" font-weight="700">const</text>
+  <text x="145" y="294" fill="#FFFFFF" font-family="Consolas, monospace" font-size="18">developer = {</text>
 
-  <text x="92" y="300" fill="#C95DFF" font-family="Consolas, monospace" font-size="18" font-weight="700">focus:</text>
-  <text x="168" y="300" fill="#E8F3FF" font-family="Consolas, monospace" font-size="18">['React', 'JavaScript', 'Python', 'SQL', 'Laravel'],</text>
+  <text x="92" y="320" fill="#C95DFF" font-family="Consolas, monospace" font-size="18" font-weight="700">focus:</text>
+  <text x="168" y="320" fill="#E8F3FF" font-family="Consolas, monospace" font-size="18">['React', 'JavaScript', 'Python', 'SQL', 'Laravel'],</text>
 
-  <text x="92" y="324" fill="#C95DFF" font-family="Consolas, monospace" font-size="18" font-weight="700">goal:</text>
-  <text x="156" y="324" fill="#4BF28C" font-family="Consolas, monospace" font-size="18">'Resolver problemas, crear valor y automatizar procesos.'</text>
+  <text x="92" y="346" fill="#C95DFF" font-family="Consolas, monospace" font-size="18" font-weight="700">goal:</text>
+  <text x="156" y="346" fill="#4BF28C" font-family="Consolas, monospace" font-size="18">'Resolver problemas, crear valor y automatizar procesos.'</text>
 
-  <text x="92" y="348" fill="#E8F3FF" font-family="Consolas, monospace" font-size="18">};</text>
+  <text x="92" y="372" fill="#E8F3FF" font-family="Consolas, monospace" font-size="18">};</text>
 
   <!-- Chips tecnologías -->
   <g>
-    <rect x="40" y="370" width="108" height="38" rx="10" fill="#07131E" stroke="#00DFFF" stroke-width="1.3"/>
-    <text x="94" y="394" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">React</text>
+    <rect x="40" y="385" width="108" height="34" rx="10" fill="#07131E" stroke="#00DFFF" stroke-width="1.3"/>
+    <text x="94" y="407" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">React</text>
   </g>
 
   <g>
-    <rect x="160" y="370" width="146" height="38" rx="10" fill="#07131E" stroke="#E6C229" stroke-width="1.3"/>
-    <text x="233" y="394" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">JavaScript</text>
+    <rect x="160" y="385" width="146" height="34" rx="10" fill="#07131E" stroke="#E6C229" stroke-width="1.3"/>
+    <text x="233" y="407" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">JavaScript</text>
   </g>
 
   <g>
-    <rect x="318" y="370" width="110" height="38" rx="10" fill="#07131E" stroke="#4AA3FF" stroke-width="1.3"/>
-    <text x="373" y="394" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">Python</text>
+    <rect x="318" y="385" width="110" height="34" rx="10" fill="#07131E" stroke="#4AA3FF" stroke-width="1.3"/>
+    <text x="373" y="407" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">Python</text>
   </g>
 
   <g>
-    <rect x="440" y="370" width="94" height="38" rx="10" fill="#07131E" stroke="#00DFFF" stroke-width="1.3"/>
-    <text x="487" y="394" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">SQL</text>
+    <rect x="440" y="385" width="94" height="34" rx="10" fill="#07131E" stroke="#00DFFF" stroke-width="1.3"/>
+    <text x="487" y="407" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">SQL</text>
   </g>
 
   <g>
-    <rect x="546" y="370" width="118" height="38" rx="10" fill="#07131E" stroke="#FF4D4D" stroke-width="1.3"/>
-    <text x="605" y="394" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">Laravel</text>
+    <rect x="546" y="385" width="118" height="34" rx="10" fill="#07131E" stroke="#FF4D4D" stroke-width="1.3"/>
+    <text x="605" y="407" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">Laravel</text>
   </g>
 
-  <!-- Decoración derecha -->
+  <!-- Zona decorativa derecha -->
   <g opacity="0.95">
-    <circle cx="940" cy="195" r="108" stroke="#0B6EA0" stroke-opacity="0.35" stroke-width="1.5"/>
-    <circle cx="940" cy="195" r="90" stroke="#11D8FF" stroke-opacity="0.25" stroke-width="1.2" stroke-dasharray="8 7"/>
-    <circle cx="940" cy="195" r="72" stroke="#11D8FF" stroke-opacity="0.12" stroke-width="1"/>
+    <circle cx="950" cy="205" r="108" stroke="#0B6EA0" stroke-opacity="0.35" stroke-width="1.5"/>
+    <circle cx="950" cy="205" r="90" stroke="#11D8FF" stroke-opacity="0.25" stroke-width="1.2" stroke-dasharray="8 7"/>
+    <circle cx="950" cy="205" r="72" stroke="#11D8FF" stroke-opacity="0.12" stroke-width="1"/>
 
-    <line x1="745" y1="126" x2="830" y2="126" stroke="#11D8FF" stroke-opacity="0.5"/>
-    <line x1="745" y1="310" x2="820" y2="310" stroke="#11D8FF" stroke-opacity="0.5"/>
-    <line x1="1058" y1="120" x2="1162" y2="120" stroke="#11D8FF" stroke-opacity="0.5"/>
-    <line x1="1060" y1="335" x2="1165" y2="335" stroke="#11D8FF" stroke-opacity="0.5"/>
+    <line x1="760" y1="134" x2="850" y2="134" stroke="#11D8FF" stroke-opacity="0.5"/>
+    <line x1="760" y1="318" x2="842" y2="318" stroke="#11D8FF" stroke-opacity="0.5"/>
+    <line x1="1058" y1="128" x2="1162" y2="128" stroke="#11D8FF" stroke-opacity="0.5"/>
+    <line x1="1060" y1="338" x2="1165" y2="338" stroke="#11D8FF" stroke-opacity="0.5"/>
 
-    <circle cx="748" cy="126" r="3.2" fill="#3EE7FF" filter="url(#softGlow)"/>
-    <circle cx="742" cy="310" r="3.2" fill="#3EE7FF" filter="url(#softGlow)"/>
-    <circle cx="1168" cy="120" r="3.2" fill="#3EE7FF" filter="url(#softGlow)"/>
-    <circle cx="1172" cy="335" r="3.2" fill="#3EE7FF" filter="url(#softGlow)"/>
+    <circle cx="760" cy="134" r="3.2" fill="#3EE7FF" filter="url(#softGlow)"/>
+    <circle cx="758" cy="318" r="3.2" fill="#3EE7FF" filter="url(#softGlow)"/>
+    <circle cx="1168" cy="128" r="3.2" fill="#3EE7FF" filter="url(#softGlow)"/>
+    <circle cx="1172" cy="338" r="3.2" fill="#3EE7FF" filter="url(#softGlow)"/>
 
-    <!-- símbolo código -->
     <text
-      x="940"
-      y="248"
+      x="950"
+      y="255"
       text-anchor="middle"
       fill="#3EE7FF"
       font-family="Consolas, 'Courier New', monospace"
@@ -252,8 +273,8 @@
 
   <!-- Texto inferior derecho -->
   <text
-    x="890"
-    y="372"
+    x="900"
+    y="392"
     fill="#FFFFFF"
     font-family="Segoe UI, Arial, sans-serif"
     font-size="18"
@@ -262,11 +283,11 @@
     Desarrollo
   </text>
 
-  <circle cx="973" cy="366" r="3.2" fill="#11D8FF"/>
+  <circle cx="985" cy="386" r="3.2" fill="#11D8FF"/>
 
   <text
-    x="986"
-    y="372"
+    x="998"
+    y="392"
     fill="#FFFFFF"
     font-family="Segoe UI, Arial, sans-serif"
     font-size="18"
