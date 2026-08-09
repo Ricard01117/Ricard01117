@@ -1,6 +1,6 @@
 <div align="center">
 
-# Hola, soy Ricardo Castro 👋
+# Hola, soy Ricardo Castro 
 
 <img
   src="./assets/header.svg"
