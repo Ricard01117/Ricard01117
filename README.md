@@ -75,7 +75,7 @@ Plataforma académica desarrollada para gestión, publicación y consulta de con
 
 **Tecnologías:** React · Laravel · MySQL
 
-[Ver repositorio](https://github.com/Ricard01117/plataforma-academica)
+[Ver repositorio](https://github.com/Ricard01117/plataforma--academica)
 
 </td>
 
