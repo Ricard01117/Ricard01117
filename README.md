@@ -19,7 +19,7 @@
   <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white">
 </a>
 
-<a href="https://ricard01117.github.io/">
+<a href="https://ricard01117.github.io/?v=14">
   <img src="https://img.shields.io/badge/Portafolio-00E5FF?style=for-the-badge&logo=googlechrome&logoColor=000000">
 </a>
 
